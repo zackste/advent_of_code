@@ -15,5 +15,5 @@ abstract class AocTestBase[T](year: Int, day: Int, targetClass: T)
   "Input data" should "be valid" in {
     inputData should not be null
     inputData.length should be >= 1
-    inputData.exists(_.trim.isEmpty) should not equal true
+    inputData.exists(_.trim.nonEmpty) should equal(true)
   }
