@@ -52,16 +52,14 @@ object Day14 extends AocBase[Int, Int]:
   }
 
   private case class Robot(py: Int, px: Int, vy: Int, vx: Int):
-    var pY: Int = py
-    var pX: Int = px
-    var vY: Int = vy
-    var vX: Int = vx
+    private var pY: Int = py
+    private var pX: Int = px
 
-    def doTick(lenY: Int, lenX: Int) = {
-      pY = (pY + vY + lenY) % lenY
-      pX = (pX + vX + lenX) % lenX
+    def doTick(lenY: Int, lenX: Int): Unit = {
+      pY = (pY + vy + lenY) % lenY
+      pX = (pX + vx + lenX) % lenX
     }
 
-    def updateMap(map: Array[Array[Int]]) = {
+    def updateMap(map: Array[Array[Int]]): Unit = {
       map(pY)(pX) += 1
     }
