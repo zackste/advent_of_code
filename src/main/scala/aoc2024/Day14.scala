@@ -16,7 +16,14 @@ object Day14 extends AocBase[Int, Int]:
 
   override def doPart1(inputLines: Array[String]): Int = {
     val robots = parseInstructions(inputLines)
-    (0 until 100).foreach(tick => robots.foreach(_.doTick(lenY, lenX)))
+    (0 until 100).foreach(tick => {
+      robots.foreach(_.doTick(lenY, lenX))
+//      val map = Array.fill(lenY) {
+//        Array.fill(lenX)(0)
+//      }
+//      robots.foreach(_.updateMap(map))
+//      map.foreach(r => println(r.map(s => if s == 0 then "." else s.toString).mkString))
+    })
 
     //    val map = Array.ofDim[Int](lenY, lenX)
     val map = Array.fill(lenY) {
