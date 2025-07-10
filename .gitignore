@@ -352,3 +352,6 @@ MigrationBackup/
 # Scala and IDEA ignorables
 project/target/
 target/
+
+# Ignore AoC input files since they don't like them being available
+src/test/resources/**/input.txt
